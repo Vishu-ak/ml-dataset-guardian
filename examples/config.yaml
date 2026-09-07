@@ -1,0 +1,15 @@
+missing:
+  info_threshold: 0.05
+  warning_threshold: 0.2
+  high_threshold: 0.4
+correlation:
+  method: pearson
+  warning_threshold: 0.95
+outlier:
+  method: iqr
+shift:
+  psi_moderate: 0.1
+  psi_high: 0.25
+fail_on: high
+sample_size: 50000
+random_seed: 42

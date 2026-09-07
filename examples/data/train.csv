@@ -1,0 +1,11 @@
+id,churn,age,income,income_copy,constant_col,near_constant,leaky_label,category,outlier_feature,target_text
+1,yes,25,50000,50000,1,0,yes,A,10,churn_yes
+2,no,30,60000,60000,1,0,yes,B,11,none
+3,no,35,70000,70000,1,0,yes,A,12,none
+4,no,40,80000,80000,1,0,yes,B,13,none
+5,no,45,90000,90000,1,0,yes,A,14,none
+6,no,50,100000,100000,1,0,yes,B,1000,churn_no
+6,no,50,100000,100000,1,0,yes,B,1000,churn_no
+7,no,,110000,110000,1,0,yes,C,15,none
+8,,60,120000,120000,1,0,yes,C,16,none
+9,no,65,,130000,1,1,yes,C,17,none
