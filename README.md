@@ -3,7 +3,8 @@
 An open-source ML dataset auditing toolkit for detecting data-quality issues, leakage, contamination, and distribution shift before model training.
 
 ## Why
-ML Dataset Guardian audits tabular datasets (CSV/Parquet) before model training with model-independent heuristics and structured findings.
+Most model failures start with data problems, not model code.
+ML Dataset Guardian gives you a quick pre-training health check for tabular datasets (CSV/Parquet) and highlights risks in plain language and JSON.
 
 ## Features
 - Dataset quality checks
@@ -59,13 +60,13 @@ print(report.findings)
 ```
 
 ## Scientific honesty and limitations
-- Heuristics can produce false positives and false negatives.
-- Correlation is not proof of redundancy or leakage.
-- Outliers can be valid observations.
-- Drift metrics require domain and temporal context.
-- Contamination checks depend on split methodology and key quality.
-- Default thresholds are configurable heuristics, not universal standards.
-- The tool runs locally and does not transmit dataset contents.
+- This tool uses heuristics, so both false positives and false negatives are possible.
+- Correlation by itself does not prove leakage or feature redundancy.
+- Outliers can be valid real-world behavior, not always data errors.
+- Drift metrics need domain context and the right time window to be meaningful.
+- Contamination checks are only as good as the split strategy and keys you provide.
+- Default thresholds are starting points, not universal rules.
+- ML Dataset Guardian runs locally and does not transmit your dataset contents.
 
 ## Development
 ```bash
@@ -86,7 +87,8 @@ python -m build
 - `src/mlguardian/cli/main.py`: CLI entrypoint
 
 ## Extending detectors
-Add a detector factory with `@register_detector("name")` and implement `run(train_df, test_df, context)` returning `Finding` items.
+Add a detector with `@register_detector("name")`, implement `run(train_df, test_df, context)`, and return a list of `Finding` objects.
+If you open a PR for a new detector, please include fixture-based tests that show both expected hits and expected non-hits.
 
 ## Examples
 - `examples/basic_audit.py`

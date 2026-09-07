@@ -1,5 +1,7 @@
 # Contributing
 
+Thanks for taking time to contribute.
+
 ## Setup
 1. `python -m venv .venv && source .venv/bin/activate`
 2. `pip install -e .[dev]`
@@ -15,3 +17,4 @@
 - Keep checks heuristic and transparent.
 - Avoid logging sensitive row contents.
 - Prefer vectorized Pandas operations for scale.
+- Keep recommendations actionable and scientifically honest.
